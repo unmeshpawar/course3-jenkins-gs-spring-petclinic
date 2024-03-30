@@ -25,7 +25,7 @@ pipeline {
     }
 
     post {
-        regression {
+        always {
             emailext body: '${env.BUILD_URL}\n${currentBuild.absoluteUrl}',
             to: 'always@foo.bar',
             recipientProviders: [previous()],
